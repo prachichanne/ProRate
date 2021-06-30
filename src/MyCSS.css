@@ -1,0 +1,37 @@
+#wel {
+    margin-top: 20px;
+  }
+
+  .wi {
+    height: 500px;
+  }
+
+  .wi img {
+    height: 500px;
+  }
+
+  .btn1 {
+    margin: 13px 0px;
+    width: 120px;
+  }
+
+  .con {
+    /* border: 2px solid red; */
+    display: flexbox;
+    flex-direction: row;
+    align-items: center;
+
+  }
+
+  .con img {
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    /* color: transparent; */
+  }
+
+  .con li {
+
+    list-style: none;
+    display: inline;
+  }
