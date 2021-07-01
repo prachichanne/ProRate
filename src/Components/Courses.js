@@ -1,9 +1,12 @@
 // type rfc
 import React from 'react';
+import '../MyCSS.css';
+
 import c1 from '../images/bgf.jpg';
 import c2 from '../images/2bg.jpg';
 import c3 from '../images/bg4.png';
 import c4 from '../images/bg3.png';
+
 
 
 export default function Courses() {
@@ -12,7 +15,7 @@ export default function Courses() {
             <div class="container my-5">
                 <div class="row mb-2">
                     <div class="col-md-6">
-                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="anime1 row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                             <div class="col p-4 d-flex flex-column position-static">
                                 <strong class="d-inline-block mb-2 text-primary">World</strong>
                                 <h3 class="mb-0"> Coding World</h3>
@@ -28,7 +31,7 @@ export default function Courses() {
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                            <div class=" anime1 row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative ">
                                 <div class="col p-4 d-flex flex-column position-static">
                                     <strong class="d-inline-block mb-2 text-success">Design</strong>
                                     <h3 class="mb-0">Learn Designing</h3>
@@ -47,7 +50,7 @@ export default function Courses() {
                     <div class="container my-4">
                         <div class="row mb-2">
                             <div class="col-md-6">
-                                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="anime1 row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                                     <div class="col p-4 d-flex flex-column position-static">
                                         <strong class="d-inline-block mb-2 text-primary">World</strong>
                                         <h3 class="mb-0"> Data Science</h3>
@@ -63,7 +66,7 @@ export default function Courses() {
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                    <div class="anime1 row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                                         <div class="col p-4 d-flex flex-column position-static">
                                             <strong class="d-inline-block mb-2 text-success">Design</strong>
                                             <h3 class="mb-0">Learn Python</h3>

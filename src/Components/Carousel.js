@@ -20,33 +20,33 @@ export default function Carousel() {
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src={first}class="d-block w-100" alt="..."/>
+            <img src={first}class="imgclass d-block w-100" alt="..."/>
             <div class="carousel-caption d-none d-md-block">
-              <h2 id="wel">Welcome to Coolcoders</h2>
+              <h2 id="wel">Welcome to CourseFlix!!</h2>
               <p>Technology,News,Innovations and Trends.</p>
-              <button class="btn btn-danger">Technology</button>
-              <button class="btn btn-primary">Web Developement</button>
-              <button class="btn btn-success">Tech Fun</button>
+              <button class="btn1 btn btn-danger">Technology</button>
+              <button class="btn1 btn btn-primary">Web Developement</button>
+              <button class="btn1 btn btn-success">Tech Fun</button>
             </div>
           </div>
           <div class="carousel-item">
-            <img src={second} class="d-block w-100" alt="..."/>
+            <img src={second} class="imgclass d-block w-100" alt="..."/>
             <div class="carousel-caption d-none d-md-block">
-              <h2>Welcome to Coolcoders</h2>
+              <h2>Welcome to CourseFlix!!</h2>
               <p>Technology,News,Innovations and Trends.</p>
-              <button class="btn btn-danger">Technology</button>
-              <button class="btn btn-primary">Web Developement</button>
-              <button class="btn btn-success">Tech Fun</button>
+              <button class="btn1 btn btn-danger">Technology</button>
+              <button class="btn1 btn btn-primary">Web Developement</button>
+              <button class="btn1 btn btn-success">Tech Fun</button>
             </div>
           </div>
           <div class="carousel-item">
-            <img src={third} class="d-block w-100" alt="..."/>
+            <img src={third} class="imgclass d-block w-100" alt="..."/>
             <div class="carousel-caption d-none d-md-block">
-              <h2>Welcome to Coolcoders</h2>
+              <h2>Welcome to CourseFlix!!</h2>
               <p>Technology,News,Innovations and Trends.</p>
-              <button class="btn btn-danger">Technology</button>
-              <button class="btn btn-primary">Web Developement</button>
-              <button class="btn btn-success">Tech Fun</button>
+              <button class="btn1 btn btn-danger">Technology</button>
+              <button class="btn1 btn btn-primary">Web Developement</button>
+              <button class="btn1 btn btn-success">Tech Fun</button>
             </div>
           </div>
         </div>
