@@ -18,7 +18,7 @@ export default function Footer() {
         <div class="footer1">
         <div class="item1">© 2020–2021 Courseflix, Inc. </div>
         <div class="item2">
-          <div id="fb" onClick={fbclick}><img src={fb} alt="" /></div>  
+          <img src={fb} alt="" /> 
             <img src={insta} alt="" />
             <img src={twitter} alt="" />
             <img src={linkedin} alt="" />
