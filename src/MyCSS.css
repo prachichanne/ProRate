@@ -17,7 +17,35 @@
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px !important;
 }
 
+.navbar .megamenu{ padding: 2rem; background-color: rgb(240, 248, 132);}
+    /* ============ desktop view ============ */
+    @media all and (min-width: 500px) {
+      
+      .navbar .has-megamenu{position:static!important;}
+      .navbar .megamenu{ left:20px; right: 20px;; width:60%; margin-top:0;margin-left: 50px;margin-right: 50px; }
+      
+    }	
 
+    @media(max-width: 991px){
+      .navbar.fixed-top .navbar-collapse, .navbar.sticky-top .navbar-collapse{
+        overflow-y: auto;
+          max-height: 100vh;
+          margin-top:10px;
+      }
+      }
+
+      .megamenu a{
+        font-size: 17px;
+        cursor: default;
+     }
+    .megamenu a:hover{
+        color: rgb(238, 56, 71);
+        font-size: 23px;
+     }
+    .megamenu h6{
+        color: black;
+        font-size: 20px;
+    }
 
 
 
