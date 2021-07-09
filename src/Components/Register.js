@@ -12,11 +12,12 @@ export default function Login(){
     return(
        
        <div class="LoginContainer">
+         <h3>Welcome ! Register here ..</h3>
             <form>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <div id="emailHelp" style={{color:"white"}} class="form-text">We'll never share your email with anyone else.*</div>
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -35,9 +36,10 @@ export default function Login(){
               <input type="text" aria-label="First name" class="form-control"/>
               <input type="text" aria-label="Last name" class="form-control"/>
             </div>
-             <button type="submit" class="btn btn-success my-4">Create Account</button>
+
+            <div class="crete"><button style={{backgroundColor:"green"}} type="submit" class="btn btn-success my-4">Create Account</button></div> 
              <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" onClick={routeChange}>Close</button>
+            <button style={{backgroundColor:"red"}} type="button" class="btn btn-secondary" onClick={routeChange}>Close</button>
             <button type="button" class="btn btn-primary" onClick={routeChange}>Save changes</button>
           </div>
       
