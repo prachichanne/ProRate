@@ -1,21 +1,22 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import '../MyCSS.css';
+import Footer from "./Footer";
 
-export default function Header() {
+export default function Contact(){
     const history = useHistory();
 
-const routeChange = () =>{ 
-let path = `\login`; 
-history.push(path); 
-}
-const routeChange1 = () =>{ 
-    let path1= '/register'; 
-    history.push(path1); 
+    const routeChange = () =>{ 
+    let path = `\login`; 
+    history.push(path); 
     }
-    return (
-        <div>
+    const routeChange1 = () =>{ 
+        let path1= '/register'; 
+        history.push(path1); 
+        }
+return(
+    <>
+     <div>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">CourseFlix</a>
@@ -25,7 +26,7 @@ const routeChange1 = () =>{
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <NavLink exact activeClassName="nav-link" to ="/" class="nav-link">Home</NavLink>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="#">Make me Instructor</a>
@@ -46,7 +47,7 @@ const routeChange1 = () =>{
                                 
                             </li>
                             <li class="nav-item">
-                            <NavLink exact activeClassName="nav-link" to ="/contact" class="nav-link">Contact Us</NavLink>
+                            <NavLink exact activeClassName="nav-link" to ="/contact" class="nav-link active">Contact Us</NavLink>
                             </li>
 
 
@@ -71,5 +72,32 @@ const routeChange1 = () =>{
                 </div>
             </nav>
         </div>
-    )
+    
+     <div class="container my-4">
+     <h1>Contact Us</h1>
+     <form>
+         <div class="mb-3">
+             <label for="exampleFormControlInput1" class="form-label">Email address</label>
+             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+         </div>
+         <div class="mb-3">
+             <label for="exampleFormControlTextarea1" class="form-label">Write your Query Here.</label>
+             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+         </div>
+
+         <div class="mb-3 form-check">
+             <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
+             <label class="form-check-label" for="exampleCheck1">I am agree with terms and conditions.</label>
+         </div>
+         <button type="submit" class="btn btn-primary">Submit</button>
+     </form>
+
+     <hr/>
+ </div>
+<Footer/>
+   </>
+    
+   
+)
+
 }

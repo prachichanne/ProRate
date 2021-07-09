@@ -40,3 +40,11 @@
     transform: rotate(360deg);
   }
 }
+/* Footer Images */
+.wi {
+  height: 500px;
+}
+
+.wi img {
+  height: 500px;
+}
