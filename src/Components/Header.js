@@ -39,7 +39,7 @@ const routeChange1 = () =>{
                                 <a class="nav-link active" aria-current="page" href="#">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">Make me Instructor </a>
+                            <NavLink exact activeClassName="nav-link" to ="/instructorform" class="nav-link">Make Me Instructor</NavLink>
                             </li>
 
                             <li className="nav-item dropdown has-megamenu">

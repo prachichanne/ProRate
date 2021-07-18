@@ -1,148 +1,158 @@
-
-
 /* anime1 for effects */
 
-
-.anime1{
-  
-  background-color:burlywood;
-  transition:all 0.5s 0s;
+.anime1 {
+  background-color: burlywood;
+  transition: all 0.5s 0s;
   transform: scale(0.95) !important;
-  
 }
-.anime1:hover{
-  
-  transform: scale(1.0) !important;
-  cursor:crosshair;
-  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px !important;
+.anime1:hover {
+  transform: scale(1) !important;
+  cursor: crosshair;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px !important;
 }
 
-.navbar .megamenu{ padding: 2rem; background-color:rgb(221, 214, 74);}
-    /* ============ desktop view ============ */
-    @media all and (min-width: 500px) {
-      
-      .navbar .has-megamenu{position:static!important;}
-      .navbar .megamenu{ left:20px; right: 20px;; width:60%; margin-top:0;margin-left: 50px;margin-right: 50px; }
-      
-    }	
+.navbar .megamenu {
+  padding: 2rem;
+  background-color: rgb(221, 214, 74);
+}
+/* ============ desktop view ============ */
+@media all and (min-width: 500px) {
+  .navbar .has-megamenu {
+    position: static !important;
+  }
+  .navbar .megamenu {
+    left: 20px;
+    right: 20px;
+    width: 60%;
+    margin-top: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
 
-    @media(max-width: 991px){
-      .navbar.fixed-top .navbar-collapse, .navbar.sticky-top .navbar-collapse{
-        overflow-y: auto;
-          max-height: 100vh;
-          margin-top:10px;
-      }
-      }
+@media (max-width: 991px) {
+  .navbar.fixed-top .navbar-collapse,
+  .navbar.sticky-top .navbar-collapse {
+    overflow-y: auto;
+    max-height: 100vh;
+    margin-top: 10px;
+  }
+}
 
-      .megamenu a{
-        font-size: 17px;
-        cursor: default;
-        color: rgb(17, 17, 17);
-     }
-    .megamenu a:hover{
-        color: rgb(238, 56, 71);
-        font-size: 23px;
-     }
-    .megamenu h6{
-        color: rgb(27, 27, 26);
-        font-size: 20px;
-    }
-
-
+.megamenu a {
+  font-size: 17px;
+  cursor: default;
+  color: rgb(17, 17, 17);
+}
+.megamenu a:hover {
+  color: rgb(238, 56, 71);
+  font-size: 23px;
+}
+.megamenu h6 {
+  color: rgb(27, 27, 26);
+  font-size: 20px;
+}
 
 #wel {
-    margin-top: 20px;
-  }
+  margin-top: 20px;
+}
 /* carousel main class wi */
-  .wi {
-    height: 500px;
-    color:cornsilk !important;
-    font-weight: bolder;
-    text-shadow: 1px 1px 5px grey !important;
-    font-family: 'Baloo Bhai 2', cursive !important;
-  }
+.wi {
+  height: 500px;
+  color: cornsilk !important;
+  font-weight: bolder;
+  text-shadow: 1px 1px 5px grey !important;
+  font-family: "Baloo Bhai 2", cursive !important;
+}
 
-  .wi img {
-    height: 500px;
-  }
+.wi img {
+  height: 500px;
+}
 /* carousel buttons */
 
-  .btn1 {
-    margin: 0px 8px;
-    
-    height: auto;
-  }
+.btn1 {
+  margin: 0px 8px;
 
-  /* carousel imgs opacity */
- 
-  
-  .imgclass{
-    
-    z-index: -1 !important;
-  }
+  height: auto;
+}
 
-  .con {
-    /* border: 2px solid red; */
-    display: flexbox;
-    flex-direction: row;
-    align-items: center;
+/* carousel imgs opacity */
 
-  }
+.imgclass {
+  z-index: -1 !important;
+}
 
-  .con img {
-    height: 50px;
-    width: 50px;
-    padding: 5px;
-    /* color: transparent; */
-  }
+.con {
+  /* border: 2px solid red; */
+  display: flexbox;
+  flex-direction: row;
+  align-items: center;
+}
 
-  .con li {
+.con img {
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  /* color: transparent; */
+}
 
-    list-style: none;
-    display: inline;
-  }
-  .footer1{
-    display:flex;
-    align-items: center;
-    justify-content: flex-start;
+.con li {
+  list-style: none;
+  display: inline;
+}
+.footer1 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.item2 img {
+  padding: 8px;
+  height: 8vh;
+  width: 3vw;
+}
+.item1 {
+  margin-left: 105px;
+}
+.item3 {
+  position: relative;
+  left: 700px;
+  font-family: "Lucida Sans", "Lucida Sans Regular";
+  font-weight: bold;
+}
+/* login container css */
+.LoginContainer {
+  /* border: 2px solid black; */
+  padding: 25px;
+  margin: 3rem auto;
+  width: 50vw;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px !important;
+}
 
-  }
-  .item2 img{
-    
-    padding: 8px;
-    height:8vh;
-    width: 3vw;
-  }
-  .item1{
-    margin-left: 105px;
-  }
-  .item3{
-    position:relative;
-    left:700px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular';
-    font-weight: bold;
-
-  }
- /* login container css */
- .LoginContainer{
-   /* border: 2px solid black; */
-   padding:25px;
-   margin:3rem auto;
-   width: 50vw;
-   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px !important;
- }
- 
- .item2{
-  display: block;  
+.item2 {
+  display: block;
   justify-content: center;
+}
 
- }
-
- .LoginContainer{
-
+.LoginContainer {
   background-color: rgb(17, 115, 160);
   color: whitesmoke;
   font-size: 20px;
   border-radius: 5px;
- }
+}
 
+/* CSS For Instructor Form that is make me instructor page   */
+
+.form1 {
+  /* border: 2px solid red; */
+  width: 80vw;
+  margin: 10px auto;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px !important;
+  padding: 2% 10%;
+  /* margin-top: 5%; */
+}
