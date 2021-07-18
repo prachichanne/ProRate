@@ -10,6 +10,7 @@ import Login from './Components/Login';
 import Register from './Components/Register';
 import Contact from './Components/Contact';
 import About from './Components/About';
+import InstructorForm from './Components/InstructorForm';
 
 
 function App() {   
@@ -21,7 +22,7 @@ function App() {
         <Route exact path='/register' component={Register}/>
         <Route exact path='/contact' component={Contact}/>
         <Route exact path='/about' component={About}/>
-
+        <Route exact path='/instructorform' component={InstructorForm}/>
       </Switch>
       
       
