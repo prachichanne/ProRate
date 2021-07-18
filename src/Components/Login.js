@@ -1,4 +1,6 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
+
 import { useHistory } from "react-router-dom";
 import '../MyCSS.css';
 
@@ -10,6 +12,33 @@ export default function Login(){
         let path = '/'; 
         history.push(path); 
         }
+
+        const [email, setEmail] = useState('');
+        const [username, setUsername] = useState('');
+        const [password, setPassword] = useState('');
+
+        function handleSubmit(e){
+          e.preventDefault();
+        
+          const postData = {
+                   email,
+                   password,
+                   username,
+                 
+        
+          };
+        
+          axios.post("http://localhost:8082/api/create",postData)
+                  .then(response => {
+                      console.log(response);
+                  });
+        
+                  setEmail("");
+                  setPassword("");
+                  setUsername("");
+                 
+        }
+           
 return(
 
 
@@ -17,20 +46,17 @@ return(
     <div className="login" class="LoginContainer">
 
          <h3>Welcome Back ! Login To Continue..</h3>
-               <form>
+               <form onSubmit={handleSubmit}>
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                      <input type="email" value={email}  onChange={(e) => setEmail(e.target.value)} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
                       <div style={{color:"white"}}id="emailHelp" class="form-text">We'll never share your email with anyone else.*</div>
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1"/>
+                      <input type="password" value={email}  onChange={(e) => setPassword(e.target.value)} class="form-control" id="exampleInputPassword1"/>
                     </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-                      <label class="form-check-label" for="exampleCheck1">Login me</label>
-                    </div>
+            
                     <button style={{backgroundColor:"green"}} type="submit" class="btn btn-primary">Submit</button>
                   
                 </form>
