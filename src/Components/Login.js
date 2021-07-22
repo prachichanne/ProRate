@@ -14,7 +14,7 @@ export default function Login(){
         }
 
         const [email, setEmail] = useState('');
-        const [username, setUsername] = useState('');
+        // const [username, setUsername] = useState('');
         const [password, setPassword] = useState('');
 
         function handleSubmit(e){
@@ -23,21 +23,20 @@ export default function Login(){
           const postData = {
                    email,
                    password,
-                   username,
-                 
         
           };
         
-          axios.post("http://localhost:8082/api/create",postData)
+          axios.post("http://localhost:8082/api/login",postData)
                   .then(response => {
                       console.log(response);
                   });
         
                   setEmail("");
                   setPassword("");
-                  setUsername("");
                  
         }
+
+        
            
 return(
 
@@ -54,7 +53,7 @@ return(
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" value={email}  onChange={(e) => setPassword(e.target.value)} class="form-control" id="exampleInputPassword1"/>
+                      <input type="password" value={password}  onChange={(e) => setPassword(e.target.value)} class="form-control" id="exampleInputPassword1"/>
                     </div>
             
                     <button style={{backgroundColor:"green"}} type="submit" class="btn btn-primary">Submit</button>
