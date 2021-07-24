@@ -94,6 +94,7 @@ function InstructorForm() {
 return (
 
      <div className="form1">
+       <h2 style={{textAlign:"center"}}>Instructor Registration</h2>
       <Form class="instructorform" onSubmit={handleSubmit}>
         {/* 
         <FormGroup>
@@ -106,6 +107,7 @@ return (
         <br></br>
         <FormGroup>
           <h2>Personal Details</h2>
+
           <div class="row">
             <div class="col">
               <input
@@ -134,6 +136,8 @@ return (
         <br></br>
         <FormGroup>
           <Label for="exampleNo">Phone Number</Label>
+          <br></br>
+          
           <Input
             type="tel"
             id="exampleName"
@@ -148,6 +152,7 @@ return (
           Gender
           <div class="form-check form-check-inline">
             <input
+            style={{marginLeft:"0.5px"}}
               class="form-check-input"
               type="radio"
               name="inlineRadioOptions"
@@ -220,6 +225,7 @@ return (
             </label>
             <input type="text" class="form-control" id="inputCity" name="city" value={city}   onChange={(e) => setCity(e.target.value)} />
           </div>
+          <br></br>
           <div class="col-md-4">
             <label for="inputState" class="form-label">
               State
@@ -265,11 +271,12 @@ return (
 
             </select>
           </div>
+           <br></br>
           <div class="col-md-2">
             <label for="inputZip" class="form-label">
               Pincode
             </label>
-            <input type="text" class="form-control" id="inputZip" name="pincode" value={pincode}   onChange={(e) => setPincode(e.target.value[0])} />
+            <input type="text" class="form-control" id="inputZip" name="pincode" value={pincode}   onChange={(e) => setPincode(e.target.value[6])} />
           </div>
         </FormGroup>
         <hr></hr>
@@ -410,7 +417,7 @@ return (
         </FormGroup>  */}
 
         <br></br>
-        <Button type="submit" >Make Me Instructor</Button>
+        <Button type="submit" style={{backgroundColor:"green"}} >Make Me Instructor</Button>
         <div></div>
       </Form>
       

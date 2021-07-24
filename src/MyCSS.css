@@ -155,4 +155,9 @@
     rgba(0, 0, 0, 0.09) 0px 32px 16px !important;
   padding: 2% 10%;
   /* margin-top: 5%; */
+
+  background-color: rgb(17, 115, 160);
+  color: whitesmoke;
+  font-size: 20px;
+  border-radius: 5px;
 }
