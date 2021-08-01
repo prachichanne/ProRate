@@ -34,7 +34,7 @@ function handleSubmit(e){
 
   };
 
-  axios.post("http://localhost:8082/api/create",postData)
+  axios.post("http://localhost:8082/subs",postData)
           .then(response => {
               console.log(response);
           });

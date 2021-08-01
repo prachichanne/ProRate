@@ -12,6 +12,7 @@ import Contact from './Components/Contact';
 import About from './Components/About';
 import InstructorForm from './Components/InstructorForm';
 import TestDemo from './Components/TestDemo';
+import UserProfile from './Components/UserProfile';
 
 function App() {   
   return (
@@ -23,8 +24,7 @@ function App() {
         <Route exact path='/contact' component={Contact}/>
         <Route exact path='/about' component={About}/>
         <Route exact path='/instructorform' component={InstructorForm}/>
-
-        
+        <Route exact path='/userprofile' component={UserProfile}/>       
       </Switch>
       
       

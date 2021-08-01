@@ -24,10 +24,10 @@ const routeChange1 = () =>{
     let path1= '/register'; 
     history.push(path1); 
     }
-    // const routeChange2 = () =>{ 
-    //     let path2= '/userprofile'; 
-    //     history.push(path2); 
-    //     }  
+    const routeChange2 = () =>{ 
+        let path2= '/userprofile'; 
+        history.push(path2); 
+        }  
     return (
         <div>
             <a name="top"></a>
@@ -158,9 +158,9 @@ const routeChange1 = () =>{
 
                             </button>
                             
-                            {/* <button class="btn btn-success"  onClick={routeChange2}>
+                            <button class="btn btn-success"  onClick={routeChange2}>
                                 Profile
-                            </button> */}
+                            </button>
 
                            
                                

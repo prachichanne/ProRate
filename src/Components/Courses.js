@@ -11,9 +11,6 @@ import c4 from '../images/bg3.png';
 
 export default function Courses() {
 
-   
-
-
     return (
         <div>
             <div class="container my-5">

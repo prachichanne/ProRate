@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
 import "../MyCSS.css";
-
+import FilesUpload from "./FileUpload"
 
 function InstructorForm() {
 
@@ -24,13 +24,16 @@ function InstructorForm() {
   const [stream_12, setStream_12] = useState('');
   const [percent_12, setPercent_12] = useState('');
   const [graduation, setGraduation] = useState('');
-  const [cgpa, setCgpa] = useState('');
-  //const [file, setFile] = useState('');
+  const [cgpa, setCgpa] = useState();
+  // const [file, setFile] = useState('');
+
+
+ 
 
   function handleSubmit(e){
     e.preventDefault();
-
-    // const postData2 = {
+	
+    // const postData2 ={
     //   file,
     // }
    const postData = {
@@ -53,8 +56,11 @@ function InstructorForm() {
       percent_12,
       graduation,
       cgpa,
-     // file,
+     //file,
     };
+
+   
+
 
     axios.post("http://localhost:8082/tutor/create",postData)
     .then(response => {
@@ -85,7 +91,7 @@ function InstructorForm() {
     setPercent_12("");
     setGraduation("");
     setCgpa("");
-    // setFile("");
+    
    
 
     alert("You have been registered successfully !!")
@@ -335,7 +341,8 @@ return (
           <Label for="exampleSelect">10th Board</Label>
           <div>
           <select  id="board_10" class="form-select" name="board_10" value={board_10}   onChange={(e) => setBoard_10(e.target.value)}>
-            <option value="SSC (State Board)">SSC (State Board)</option>
+          <option selected>Choose...</option>
+            <option value="SSC">SSC (State Board)</option>
             <option value="CBSE">CBSE</option>
             <option value="ICSE">ICSC</option>
           </select>
@@ -359,6 +366,7 @@ return (
           <Label for="exampleSelect">12th Stream</Label>
           <div>
           <select  id="stream_12" class="form-select" name="stream_12" value={stream_12}   onChange={(e) => setStream_12(e.target.value)}>
+          <option selected>Choose...</option>
             <option value="Science">Science</option>
             <option value="Commerce">Commerce</option>
             <option value="Arts">Arts</option>
@@ -403,22 +411,23 @@ return (
           />
         </FormGroup>
         <br></br>
-           
-         {/* <FormGroup>
+
+        
+{/*            
+         <FormGroup>
           <Label for="exampleFile">Final Semester Result</Label>
           <br></br>
-          <Input type="file" name="file" id="exampleFile" value={file} onChange={(e) => setFile(e.target.files)} />
+          <Input type="file" name="file" id="exampleFile"  onChange={(e) => setFile(e.target.value[0])} />
           <FormText color="muted">
-            Please Upload The File in PDF Format
-            
-          </FormText>
-
-          
+            Please Upload The File in PDF Format            
+          </FormText>       
         </FormGroup>  */}
 
-        <br></br>
+        {/* <br></br>
         <Button type="submit" style={{backgroundColor:"green"}} >Make Me Instructor</Button>
-        <div></div>
+        <div></div> */}
+
+      <FilesUpload />
       </Form>
       
      </div>
