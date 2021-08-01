@@ -1,4 +1,4 @@
-package com.example.demo.document;
+package com.example.demo.Models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.bson.types.Binary;
@@ -40,6 +40,9 @@ public class Teacher {
     private String graduation ;
     private double cgpa ;
     private byte[] file;
+
+    public Teacher() {
+    }
 
     public Integer getId() {
         return id;

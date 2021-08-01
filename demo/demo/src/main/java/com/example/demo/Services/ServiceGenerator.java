@@ -1,6 +1,6 @@
-package com.example.demo.Service;
+package com.example.demo.Services;
 
-import com.example.demo.document.dbSequence;
+import com.example.demo.Models.dbSequence;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -8,12 +8,13 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
-
 import java.util.Objects;
 
 import static org.springframework.data.mongodb.core.FindAndModifyOptions.options;
+
+
 @Service
-public class ServiceGenerator2 {
+public class ServiceGenerator {
 
     @Autowired
     private MongoOperations mongoOperations;

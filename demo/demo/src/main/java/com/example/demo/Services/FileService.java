@@ -1,6 +1,5 @@
-package com.example.demo.Service;
+package com.example.demo.Services;
 
-import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-
 @Service
 public class FileService {
 
@@ -20,7 +18,7 @@ public class FileService {
     @Autowired
     private GridFsOperations operations;
 
-    public  String addFile(MultipartFile upload) throws IOException{
+    public  String addFile(MultipartFile upload) throws IOException {
         DBObject metadata = new BasicDBObject();
         metadata.put("fileSize",upload.getSize());
         Object fileID = template.store(upload.getInputStream(), upload.getOriginalFilename(), upload.getContentType(), metadata);
