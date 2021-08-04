@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Button, Label, Input, Col, Row, FormText } from "reactstrap";
 import "../MyCSS.css";
+import { Control, LocalForm, Errors } from 'react-redux-form';
 import FilesUpload from "./FileUpload"
+
+// const required = (val) => val && val.length;
+// const maxLength = (len) => (val) => !(val) || (val.length <= len);
+// const minLength = (len) => (val) => (val) && (val.length >= len);
+// const isNumber =(val) => isNaN(Number(val));
+// const valiEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,8}$/i.test(val);
+
 
 function InstructorForm() {
 
@@ -24,16 +32,19 @@ function InstructorForm() {
   const [stream_12, setStream_12] = useState('');
   const [percent_12, setPercent_12] = useState('');
   const [graduation, setGraduation] = useState('');
-  const [cgpa, setCgpa] = useState();
-  // const [file, setFile] = useState('');
+  const [cgpa, setCgpa] = useState('');
+const required = (val) => val && val.length;
+const maxLength = (len) => (val) => !(val) || (val.length <= len);
+const minLength = (len) => (val) => (val) && (val.length >= len);
+const isNumber =(val) => !isNaN(Number(val));
+const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,8}$/i.test(val);
 
+  //const [file, setFile] = useState('');
 
- 
+  function handleSubmit(values){
+    // e.preventDefault();
 
-  function handleSubmit(e){
-    e.preventDefault();
-	
-    // const postData2 ={
+    // const postData2 = {
     //   file,
     // }
    const postData = {
@@ -56,11 +67,8 @@ function InstructorForm() {
       percent_12,
       graduation,
       cgpa,
-     //file,
+     // file,
     };
-
-   
-
 
     axios.post("http://localhost:8082/tutor/create",postData)
     .then(response => {
@@ -91,77 +99,109 @@ function InstructorForm() {
     setPercent_12("");
     setGraduation("");
     setCgpa("");
-    
+    // setFile("");
    
 
-    alert("You have been registered successfully !!")
+    alert("You have been registered as Instructor successfully !!")
   }
 
 return (
 
      <div className="form1">
-       <h2 style={{textAlign:"center"}}>Instructor Registration</h2>
-      <Form class="instructorform" onSubmit={handleSubmit}>
-        {/* 
-        <FormGroup>
-        <div class="input-group">
-        <span class="input-group-text">First and last name</span>
-        <input type="text" aria-label="First name" class="form-control"/>
-        <input type="text" aria-label="Last name" class="form-control"/>
-        </div>
-      </FormGroup> */}
+      <LocalForm class="instructorform" onSubmit={(values) => this.handleSubmit(values)}>
+       
         <br></br>
-        <FormGroup>
+        <Row class="form-group">
           <h2>Personal Details</h2>
-
           <div class="row">
             <div class="col">
-              <input
-                type="text"
+              <Control.text
+                model=".firstname"
+                id="firstname"
                 class="form-control"
                 placeholder="First name"
                 aria-label="First name"
                 name="firstname"
                 value={firstname}
                 onChange={(e) => setFirstname(e.target.value)}
+                validators={{
+                  required, minLength: minLength(3), maxLength: maxLength(15)
+                }}
+              />
+              <Errors
+                  class="text-danger"
+                  model=".firstname"
+                  show="touched"
+                  messages={{
+                    required: 'Required Field!',
+                    minLength: ' Must be greater than 2 characters',
+                    maxLength: 'Must be 15 characters or less'
+                  }} 
               />
             </div>
             <div class="col">
-              <input
-                type="text"
+              <Control.text
+                model=".lastname"
+                id="lastname"
                 class="form-control"
                 placeholder="Last name"
                 aria-label="Last name"
                 name="lastname"
                 value={lastname}
                 onChange={(e) => setLastname(e.target.value)}
+                validators={{
+                  required, minLength: minLength(3), maxLength: maxLength(15)
+                }}
+              />
+                  <Errors
+                  class="text-danger"
+                  model=".lastname"
+                  show="touched"
+                  messages={{
+                    required: 'Required Field!',
+                    minLength: ' Must be greater than 2 characters',
+                    maxLength: 'Must be 15 characters or less'
+                  }} 
               />
             </div>
           </div>
-        </FormGroup>
+        </Row>
         <br></br>
-        <FormGroup>
+        <Row class="form-group">
           <Label for="exampleNo">Phone Number</Label>
-          <br></br>
-          
-          <Input
-            type="tel"
-            id="exampleName"
+          <Control.text
+            model=".examplePhoneNumber"
+            class="form-control"
+            id="examplePhoneNumber"
             placeholder="Enter Your Phone Number"
             name="phone"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
+            validators={{
+              required, minLength: minLength(10), maxLength: maxLength(13), isNumber
+            }}
           />
-        </FormGroup>
+           <Errors
+                  class="text-danger"
+                  model=".examplePhoneNumber"
+                  show="touched"
+                  messages={{
+                    required: 'Required Field!',
+                    minLength: ' Must contain atleast 10 numbers',
+                    maxLength: 'Must contain atmost 13 numbers',
+                    isNumber: ' Must be a Number'
+                  }} 
+              />
+               </Row>
         <br></br>
-        <FormGroup>
-          Gender
+        <Row class="form-group">
+          Gender :
           <div class="form-check form-check-inline">
-            <input
-            style={{marginLeft:"0.5px"}}
+            <Control.radio
               class="form-check-input"
-              type="radio"
+              
               name="inlineRadioOptions"
+              model=".Male"
               id="Male"
               value="Male"
               onChange={(e) => setGender(e.target.value)}
@@ -172,10 +212,11 @@ return (
             </label>
           </div>
           <div class="form-check form-check-inline">
-            <input
+            <Control.radio
               class="form-check-input"
-              type="radio"
+              
               name="inlineRadioOptions"
+              model=".Female"
               id="Female"
               value="Female"
               onChange={(e) => setGender(e.target.value)}
@@ -185,53 +226,97 @@ return (
               Female
             </label>
           </div>
-        </FormGroup>
+          </Row>
         <br></br>
-        <FormGroup>
+        <Row class="form-group">
           <Label for="exampleDate">Date Of Birth</Label>
-          <Input
+          <Control.text
             type="date"
             name="date"
+            model=".exampleDate"
+            class="form-control"
             id="exampleDate"
             placeholder="date placeholder"
             value={dob}
             onChange={(e) => setDob(e.target.value)}
+            validators={{
+              required
+            }}
           />
-        </FormGroup>
+          <Errors
+                  class="text-danger"
+                  model=".exampleDate"
+                  show="touched"
+                  messages={{
+                    required: 'Required Field!',
+                    
+                  }} 
+              />
+              </Row>
         <br></br>
-        <FormGroup>
+        <Row class="form-group">
           <Label for="exampleNo">Age</Label>
-          <Input
+          <Control.text
             type="Number"
             name="age"
+            model=".Age"
+            class="form-control"
             id="Age"
             placeholder="Enter Your Age"
             value={age}
             onChange={(e) => setAge(e.target.value)}
+            validators={{
+              required, minLength: minLength(2), maxLength: maxLength(3), isNumber
+            }}
 
           />
-        </FormGroup>
+          <Errors
+                  class="text-danger"
+                  model=".Age"
+                  show="touched"
+                  messages={{
+                    required: 'Required Field!',
+                    minLength: ' Must be 2 digit number',
+                    maxLength: 'Must not be greater than 3 digit number',
+                    isNumber: ' Must be a Number'
+                  }} 
+              />
+              </Row>
         <br></br>
-        <FormGroup>
+        <Row class="form-group">
           <Label for="exampleAddress">Address</Label>
-          <Input
+          <Control.text
             type="text"
             name="Address"
-            value={Address}
-            onChange={(e) => setAddress(e.target.value)}
+            model=".exampleAddress"
+            class="form-control"
             id="exampleAddress"
             placeholder="1234 Main St"
+            value={Address}
+            onChange={(e) => setAddress(e.target.value)}
           />
-        </FormGroup>
+               </Row>
         <br></br>
-        <FormGroup>
+        <Row class="form-group">
           <div class="col-md-6">
             <label for="inputCity" class="form-label">
               City
             </label>
-            <input type="text" class="form-control" id="inputCity" name="city" value={city}   onChange={(e) => setCity(e.target.value)} />
+            <Control.text type="text" class="form-control" model=".inputCity" id="inputCity" name="city" value={city}   onChange={(e) => setCity(e.target.value)}
+            validators={{
+              required
+            }}
+              />
+              <Errors
+                  class="text-danger"
+                  model=".inputCity"
+                  show="touched"
+                  messages={{
+                    required: 'Required Field!',
+                    
+                  }} 
+              />
           </div>
-          <br></br>
           <div class="col-md-4">
             <label for="inputState" class="form-label">
               State
@@ -277,158 +362,315 @@ return (
 
             </select>
           </div>
-           <br></br>
           <div class="col-md-2">
             <label for="inputZip" class="form-label">
               Pincode
             </label>
-            <input type="text" class="form-control" id="inputZip" name="pincode" value={pincode}   onChange={(e) => setPincode(e.target.value[6])} />
+            <Control.text type="text" class="form-control" model=".inputZip" id="inputZip" name="pincode" value={pincode}   onChange={(e) => setPincode(e.target.value[6])}  
+            validators={{
+              required, minLength: minLength(6), maxLength: maxLength(6), isNumber
+            }}
+
+          />
+          <Errors
+                  class="text-danger"
+                  model=".inputZip"
+                  show="touched"
+                  messages={{
+                    required: 'Required Field!',
+                    minLength: ' Must contain atleast 6 numbers',
+                    maxLength: 'Must contain atmost 6 numbers',
+                    isNumber: ' Must be a Number'
+                  }} 
+              />
           </div>
-        </FormGroup>
+          </Row>
         <hr></hr>
-        <FormGroup>
+        <Row class="form-group">
           <h2>Account Details</h2>
           <Label for="exampleEmail">Email</Label>
-          <Input
+          <Control.text
             type="email"
             name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            model=".exampleEmail"
+            class="form-control"
             id="exampleEmail"
             placeholder="Enter Your Email ID"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            validators={{
+              required, validEmail
+            }}
+
           />
-        </FormGroup>
+          <Errors
+                  class="text-danger"
+                  model=".exampleEmail"
+                  show="touched"
+                  messages={{
+                    required: 'Required Field!',
+                    validEmail:'Invalid Email Address. Please Enter Valid Email address'
+                  }} 
+              />
+               </Row>
         <br></br>
-        <FormGroup>
+        <Row class="form-group">
           <Label for="exampleus">Username</Label>
-          <Input
+          <Control.text
             type="text"
             name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            model=".exampleName"
+            class="form-control"
             id="exampleName"
             placeholder="Enter Your Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            validators={{
+              required, minLength: minLength(4), maxLength: maxLength(18)
+            }}
+
           />
-        </FormGroup>
+          <Errors
+                  class="text-danger"
+                  model=".exampleName"
+                  show="touched"
+                  messages={{
+                    required: 'Required Field!',
+                    minLength: ' Must contain atleast 4 characters, numbers or symbols',
+                    maxLength: 'Must contain atmost 16 characters, numbers or symbols',
+                   
+                  }} 
+              />
+              </Row>
         <br></br>
-        <FormGroup>
+        <Row class="form-group">
           <Label for="examplePassword">Password</Label>
-          <Input
+          <Control.text
             type="password"
             name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            model=".examplePassword"
+            class="form-control"
             id="examplePassword"
             placeholder="Enter Your Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            validators={{
+              required, minLength: minLength(4), maxLength: maxLength(18)
+            }}
+
           />
-        </FormGroup>
+          <Errors
+                  class="text-danger"
+                  model=".examplePassword"
+                  show="touched"
+                  messages={{
+                    required: 'Required Field!',
+                    minLength: ' Must contain atleast 4 characters, numbers or symbols',
+                    maxLength: 'Must contain atmost 16 characters, numbers or symbols',
+                   
+                  }} 
+              />
+               </Row>
         <br></br>
-        {/* <FormGroup>
+        {/*         <Row class="form-group">
           <Label for="examplePassword">Confirm Password</Label>
-          <Input
+          <Control.text
             type="password"
             name="password"
-            id="examplePassword"
+            model=".examplecPassword"
+            class="form-control"
+            id="examplecPassword"
             placeholder="Enter Your Password again"
+         validators={{
+              required, minLength: minLength(4), maxLength: maxLength(18)
+            }}
+
           />
-        </FormGroup> */}
+          <Errors
+                  class="text-danger"
+                  model=".examplecPassword"
+                  show="touched"
+                  messages={{
+                    required: 'Required Field!',
+                    minLength: ' Must contain atleast 4 characters, numbers or symbols',
+                    maxLength: 'Must contain atmost 16 characters, numbers or symbols',
+                   
+                  }} 
+              />
+               </Row> */}
         <br></br>
         <hr></hr>
-        <FormGroup>
+        <Row class="form-group">
           <h2>Education Details</h2>
           <br></br>
           <h5>Secondary School Details</h5>
           <Label for="exampleSelect">10th Board</Label>
           <div>
           <select  id="board_10" class="form-select" name="board_10" value={board_10}   onChange={(e) => setBoard_10(e.target.value)}>
-          <option selected>Choose...</option>
-            <option value="SSC">SSC (State Board)</option>
+            <option value="SSC (State Board)">SSC (State Board)</option>
             <option value="CBSE">CBSE</option>
             <option value="ICSE">ICSC</option>
           </select>
           </div>
-        </FormGroup>
+          </Row>
         <br></br>
-        <FormGroup>
+        <Row class="form-group">
           <Label for="exampleNo">10th Percentage</Label>
-          <Input
+          <Control.text
             type="number"
             name="percent_10"
+            model=".pertenth"
+            class="form-control"
+            id="pertenth"
+            placeholder="Enter Your 10th Percentage"
             value={percent_10}
             onChange={(e) => setPercent_10(e.target.value)}
-            id="per"
-            placeholder="Enter Your 10th Percentage"
+            validators={{
+              required, minLength: minLength(2), maxLength: maxLength(3), isNumber
+            }}
+
           />
-        </FormGroup>
+          <Errors
+                  class="text-danger"
+                  model=".pertenth"
+                  show="touched"
+                  messages={{
+                    required: 'Required Field!',
+                    minLength: ' Must be 2 digit number',
+                    maxLength: 'Must be 2 or 3 digit number',
+                    isNumber: 'Must be a number'
+                  }} 
+              />
+               </Row>
         <br></br>
-        <FormGroup>
+        <Row class="form-group">
           <h5>Higher Secondary School Details</h5>
           <Label for="exampleSelect">12th Stream</Label>
           <div>
           <select  id="stream_12" class="form-select" name="stream_12" value={stream_12}   onChange={(e) => setStream_12(e.target.value)}>
-          <option selected>Choose...</option>
             <option value="Science">Science</option>
             <option value="Commerce">Commerce</option>
             <option value="Arts">Arts</option>
           </select>
           </div>
-        </FormGroup>
+          </Row>
         <br></br>
-        <FormGroup>
+        <Row class="form-group">
           <Label for="exampleNo">12th Percentage</Label>
-          <Input
+          <Control.text
             type="number"
             name="percent_12"
+            model=".pertwelve"
+            class="form-control"
+            id="pertwelve"
+            placeholder="Enter Your 12th Percentage"
             value={percent_12}
             onChange={(e) => setPercent_12(e.target.value)}
-            id="per"
-            placeholder="Enter Your 12th Percentage"
+            validators={{
+              required, minLength: minLength(2), maxLength: maxLength(3), isNumber
+            }}
+
           />
-        </FormGroup>
+          <Errors
+                  class="text-danger"
+                  model=".pertwelve"
+                  show="touched"
+                  messages={{
+                    required: 'Required Field!',
+                    minLength: ' Must be 2 digit number',
+                    maxLength: 'Must be 2 or 3 digit number',
+                    isNumber: 'Must be a number'
+                  }} 
+              />
+               </Row>
         <br></br>
-        <FormGroup>
+        <Row class="form-group">
           <h5>Graduation Details</h5>
           <Label for="exampleName">Course Name</Label>
-          <Input
+          <Control.text
             type="text"
             name="graduation"
+            model=".exampleCourseName"
+            class="form-control"
+            id="exampleCourseName"
+            placeholder="Enter Your Course Name"
             value={graduation}
             onChange={(e) => setGraduation(e.target.value)}
-            id="exampleName"
-            placeholder="Enter Your Course Name"
+            validators={{
+              required
+            }}
           />
-        </FormGroup>
+              <Errors
+              class="text-danger"
+              model=".exampleCourseName"
+              show="touched"
+              messages={{
+                required: 'Required Field!'
+                
+              }} 
+          />
+               </Row>
         <br></br>
-        <FormGroup>
+        <Row class="form-group">
           <Label for="exampleNo">Course CGPA</Label>
-          <Input
+          <Control.text
             type="number"
             name="cgpa"
+            model=".percgpa"
+            class="form-control"
+            id="percgpa"
+            placeholder="Enter Your CGPA"
             value={cgpa}
             onChange={(e) => setCgpa(e.target.value)}
-            id="per"
-            placeholder="Enter Your CGPA"
-          />
-        </FormGroup>
-        <br></br>
+            validators={{
+              required, minLength: minLength(3), maxLength: maxLength(6), isNumber
+            }}
 
-        
-{/*            
-         <FormGroup>
+          />
+          <Errors
+                  class="text-danger"
+                  model=".percgpa"
+                  show="touched"
+                  messages={{
+                    required: 'Required Field!',
+                    minLength: ' Must be in Point format',
+                    maxLength: 'Must not be greater than 6 numbers',
+                    isNumber: 'Must be a number'
+                  }} 
+              />
+               </Row>
+        <br></br>
+           
+         {/*         <Row class="form-group">
           <Label for="exampleFile">Final Semester Result</Label>
           <br></br>
-          <Input type="file" name="file" id="exampleFile"  onChange={(e) => setFile(e.target.value[0])} />
+          <Control.text type="file" name="file" model=".exampleFile" id="exampleFile" class="form-control" 
+           validators={{
+              required
+            }}
+
+          />
+          <Errors
+                  class="text-danger"
+                  model=".exampleFile"
+                  show="touched"
+                  messages={{
+                    required: 'Required Field!',
+                    
+                  }} 
+              />
           <FormText color="muted">
-            Please Upload The File in PDF Format            
-          </FormText>       
-        </FormGroup>  */}
+            Please Upload The File in PDF Format
+            
+          </FormText>
 
-        {/* <br></br>
-        <Button type="submit" style={{backgroundColor:"green"}} >Make Me Instructor</Button>
-        <div></div> */}
+          
+               </Row>  */}
 
-      <FilesUpload />
-      </Form>
+        <br></br>
+        <Button type="submit" >Make Me Instructor</Button>
+        <div></div>
+      </LocalForm>
       
      </div>
    
