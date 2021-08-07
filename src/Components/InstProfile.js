@@ -1,7 +1,7 @@
 import React from 'react'
  
 
-const Profile = ()=>{
+const InstProfile = ()=>{
     return(
         <div>
             <div>
@@ -18,10 +18,10 @@ const Profile = ()=>{
                     <h4>Graduation cgpa:8.6</h4>
                     <h4>Address:Pune- 412039</h4>
                 </div>
-                    <Button>Create Course</Button>
+                    <button>Create Course</button>
             </div>
         </div>
     )
 }
 
-export default Profile
+export default InstProfile

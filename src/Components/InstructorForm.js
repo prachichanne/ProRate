@@ -62,7 +62,7 @@ function InstructorForm() {
    
 
 
-    axios.post("http://localhost:8082/tutor/create",postData)
+    axios.post("http://localhost:8082/register",postData)
     .then(response => {
         console.log(response);
     });
@@ -95,6 +95,7 @@ function InstructorForm() {
    
 
     alert("You have been registered successfully !!")
+    
   }
 
 return (
