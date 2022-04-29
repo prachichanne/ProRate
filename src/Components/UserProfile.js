@@ -1,14 +1,23 @@
 import axios from 'axios'
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 
 export class UserProfile extends Component {
     
     // localStorage.getItem('username')
     
+    constructor(props) {
+        super(props);
 
+
+        this.state = {
+            consultData: []
+
+        }
+    }
+    
     componentDidMount(){
+        var _this = this;
         
-        var storage = localStorage.getItem('username');
        
         const config = {
            Headers :{
@@ -18,6 +27,11 @@ export class UserProfile extends Component {
         
         axios.get("http://localhost:8082/dashboard",config).then(
             res => {
+                _this.setState({
+                    consultData: res.data
+                  });
+                
+
                 console.log(res);
              
             },
@@ -35,6 +49,7 @@ export class UserProfile extends Component {
         return (
             <div>
                 <h2>Hi {storage}</h2>
+                
             </div>
         )
     }

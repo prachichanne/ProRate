@@ -1,8 +1,8 @@
 import React from 'react';
-import '../MyCSS.css';
-import first from '../images/1off.jpg';
-import second from '../images/2.jpg';
-import third from '../images/3.png';
+import '../MyCSS1.css';
+import c1 from '../images/img1.jpg';
+import c2 from '../images/img2.jpg';
+import c3 from '../images/img3.jpg';
 
 
 
@@ -12,6 +12,16 @@ export default function Carousel() {
  
     return (
    
+      <div class="banner">
+         <div class="title"> 
+              <p>Welcome to ProRate !!</p>
+              <h2>Authentic Product Rating Website</h2>
+              <button class="btn1 btn btn-danger">Technology</button>
+              <button class="btn1 btn btn-primary">Fashion</button>
+              <button class="btn1 btn btn-success">Social</button>
+          
+      </div>
+      <div class="b1">
         <div  id="carouselExampleCaptions" class="wi carousel slide carousel-fade" data-bs-ride="carousel">
         <div  class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -23,34 +33,16 @@ export default function Carousel() {
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src={first}class="imgclass d-block w-100" alt="..."/>
-            <div class="carousel-caption d-none d-md-block">
-              <h2 id="wel">Welcome to CourseFlix!!</h2>
-              <p>Technology,News,Innovations and Trends.</p>
-              <button class="btn1 btn btn-danger">Technology</button>
-              <button class="btn1 btn btn-primary">Web Developement</button>
-              <button class="btn1 btn btn-success">Tech Fun</button>
-            </div>
+            <img src={c1}class="imgclass d-block w-100" alt="..."/>
+            
           </div>
           <div class="carousel-item">
-            <img src={second} class="imgclass d-block w-100" alt="..."/>
-            <div class="carousel-caption d-none d-md-block">
-              <h2>Welcome to CourseFlix!!</h2>
-              <p>Technology,News,Innovations and Trends.</p>
-              <button class="btn1 btn btn-danger">Technology</button>
-              <button class="btn1 btn btn-primary">Web Developement</button>
-              <button class="btn1 btn btn-success">Tech Fun</button>
-            </div>
+            <img src={c2} class="imgclass d-block w-100" alt="..."/>
+            
           </div>
           <div class="carousel-item">
-            <img src={third} class="imgclass d-block w-100" alt="..."/>
-            <div class="carousel-caption d-none d-md-block">
-              <h2>Welcome to CourseFlix!!</h2>
-              <p>Technology,News,Innovations and Trends.</p>
-              <button class="btn1 btn btn-danger">Technology</button>
-              <button class="btn1 btn btn-primary">Web Developement</button>
-              <button class="btn1 btn btn-success">Tech Fun</button>
-            </div>
+            <img src={c3} class="imgclass d-block w-100" alt="..."/>
+            
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -62,6 +54,7 @@ export default function Carousel() {
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-     
+      </div>
+      </div>
     )
 }

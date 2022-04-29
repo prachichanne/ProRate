@@ -10,13 +10,13 @@ import Login from './Components/Login';
 import Register from './Components/Register';
 import Contact from './Components/Contact';
 import About from './Components/About';
-import InstructorForm from './Components/InstructorForm';
 import TestDemo from './Components/TestDemo';
 import UserProfile from './Components/UserProfile';
-
-import Profile from './Components/Profile1';
-import InstProfile from './Components/InstProfile';
-
+import Review from './Components/Review';
+import createcomment from './Components/Dashboard';
+import Addcomment from './Components/Addcomment';
+import NewHome from './Components/NewHome';
+import Dashboard from './Components/Dashboard';
 
 function App() {   
   return (
@@ -27,11 +27,15 @@ function App() {
         <Route exact path='/register' component={Register}/>
         <Route exact path='/contact' component={Contact}/>
         <Route exact path='/about' component={About}/>
-        <Route exact path='/instructorform' component={InstructorForm}/>
-        {/* <Route exact path='/userprofile' component={Profile}/>  */}
+        {/* <Route exact path='/userprofile' component={UserProfile}/>  */}
         <Route exact path='/' component={Home}/>   
-        <Route exact path='/profile' component={Profile}/>
-        <Route exact path='/instructprofile' component={InstProfile}/>
+        <Route exact path='/userprofile' component={UserProfile}/>
+        {/* <Route eaxct path="/review" component={Review} /> */}
+        <Route eaxct path="/getcomments" component={createcomment} />
+        <Route eaxct path="/addcomment" component={Addcomment} />
+        <Route eaxct path="/newhome" component={NewHome} />
+        <Route eaxct path="/dashboard" component={Dashboard} />
+
 
     
       

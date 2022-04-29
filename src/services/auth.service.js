@@ -22,6 +22,7 @@ const login = (username, password) => {
         if (response.data.response) {
           localStorage.setItem("user", JSON.stringify(response.data));
           localStorage.setItem("username",username);
+          console.log(response.data)
         }
   
         return response.data;

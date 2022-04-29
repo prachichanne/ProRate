@@ -1,8 +1,9 @@
 import React from "react";
 import Header from "./Header";
 import Carousel from "./Carousel";
-import Courses from "./Courses";
 import Footer from "./Footer";
+import Moblie from "./Mobile"
+import Fashion from "./Fashion";
 
 export default function Home(){
     
@@ -10,7 +11,8 @@ export default function Home(){
         <>
         <Header/>
         <Carousel/>
-        <Courses/>
+        <Fashion/>
+        <Moblie/>
         <Footer/>
         </>
     )
