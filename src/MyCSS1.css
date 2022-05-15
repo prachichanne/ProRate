@@ -1,0 +1,252 @@
+
+.cards{
+  display: flex;
+  margin:30px;
+}
+.card{
+  width: 18rem;
+  margin-right: 10px;
+
+}
+
+
+.title{
+ padding-top: 10%;
+  width: 70%;
+  text-align: center;
+  /* background-color:#EA8A81; */
+  background-color:#B6C48E;
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  color:#283a0d ;
+}
+.b1{
+width: 25%;
+}
+
+.banner{
+  padding-top: 30px;
+  display:flex;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+/* anime1 for effects */
+
+
+
+.anime1{
+  
+    background-color:burlywood;
+    transition:all 0.5s 0s;
+    transform: scale(0.95) !important;
+    
+  }
+  .anime1:hover{
+    
+    transform: scale(1.0) !important;
+    cursor:crosshair;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px !important;
+  }
+  
+  .img1{
+     
+     width: 50%;
+  }
+
+.col-6 a{
+  
+  padding: 10px;
+  margin: 5px;
+}
+.col-6 :hover{
+  color: white;
+  
+}
+.f1{
+  margin: 10%;
+}
+
+.card-deck{
+  width: 90%;
+  align-items: center;
+}
+.card{
+
+  align-items: center;
+}
+.card img{
+    width: 70%;
+  }
+  
+  #wel {
+      margin-top: 20px;
+    }
+  /* carousel main class wi */
+    .wi {
+      height: 500px;
+      color:cornsilk !important;
+      font-weight: bolder;
+      text-shadow: 1px 1px 5px grey !important;
+      font-family: 'Baloo Bhai 2', cursive !important;
+    }
+  
+    .wi img {
+      height: 500px;
+    }
+  /* carousel buttons */
+  
+    .btn1 {
+      margin: 0px 8px;
+      
+      height: auto;
+    }
+  
+    /* carousel imgs opacity */
+   
+    
+    .imgclass{
+      
+      z-index: -1 !important;
+    }
+  
+    .con {
+      /* border: 2px solid red; */
+      display: flexbox;
+      flex-direction: row;
+      align-items: center;
+  
+    }
+  
+    .con img {
+      height: 50px;
+      width: 50px;
+      padding: 5px;
+      /* color: transparent; */
+    }
+  
+    .con li {
+  
+      list-style: none;
+      display: inline;
+    }
+    .footer1{
+      display:flex;
+      align-items: center;
+      justify-content: flex-start;
+  
+    }
+    .item2 img{
+      
+      padding: 8px;
+      height:8vh;
+      width: 3vw;
+    }
+    .item1{
+      margin-left: 105px;
+    }
+    .item3{
+      position:relative;
+      left:700px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular';
+      font-weight: bold;
+  
+    }
+
+.carouselExampleControls{
+ align-items: center;
+ text-align: center;
+ margin-left:50% ;
+ padding-left: 50%;
+    }
+  
+    .clothing{
+      height: 60%;
+      width: 100%;
+    }
+
+    .img-fluid{max-width:100%;height:60%}
+
+
+
+    .txt-center {
+      text-align: center;
+    }
+    .hide {
+      display: none;
+    }
+    
+    .clear {
+      float: none;
+      clear: both;
+    }
+    
+    .rating {
+        width: 90px;
+        unicode-bidi: bidi-override;
+        direction: rtl;
+        text-align: center;
+        position: relative;
+        font-size: larger;
+    }
+    
+    .rating > label {
+        float: right;
+        display: inline;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        width: 1 em;
+        cursor: pointer;
+        color: #000;
+    }
+    
+    .rating > label:hover,
+    .rating > label:hover ~ label,
+    .rating > input.radio-btn:checked ~ label {
+        color: transparent;
+    }
+    
+    .rating > label:hover:before,
+    .rating > label:hover ~ label:before,
+    .rating > input.radio-btn:checked ~ label:before,
+    .rating > input.radio-btn:checked ~ label:before {
+        content: "\2605";
+        position: absolute;
+        left: 0;
+        color: #FFD700;
+    }
+    
+
+
+    table, th,td {
+      border:1px solid ;
+      width:50%;
+      padding: 4px;
+     
+        margin-left: auto;
+        margin-right: auto;
+      
+     
+    }
+    th{
+      background-color: rgb(89, 204, 103);
+    }
+
+    .table1 table{
+      width: 50%;
+      align-items: center;
+      
+    }
+
+    .getreview{
+
+      font-size: 20px;
+      margin: 5%;
+      
+
+
+    }
+
+    h2{
+      text-align: center;
+    }
